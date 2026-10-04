@@ -121,7 +121,8 @@ function requireAdmin(req, res, next) {
 
 // Serve static files from admin directory
 app.use('/admin/static', express.static(path.join(__dirname, 'static')));
-
+// Serve main portfolio static files
+app.use(express.static(path.join(__dirname, '..')));
 // Login Page
 app.get('/admin/login', (req, res) => {
   if (req.session && req.session.user) {
@@ -603,7 +604,7 @@ if (!fs.existsSync(path.join(DATA_PATH, 'projects.json'))) {
   writeJsonFile(path.join(DATA_PATH, 'projects.json'), []);
 }
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`\n╔════════════════════════════════════════════════════════════╗`);
   console.log(`║`);
   console.log(`║  🚀 NOVA EDGE Admin Panel Server Running`);
