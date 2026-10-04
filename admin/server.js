@@ -522,11 +522,11 @@ app.post('/api/users/:id', requireAuth, requireAdmin, (req, res) => {
     updateUser(user.passwordHash);
   }
   
-  function updateUser(passwordHash) {
+  function updateUser(hashedPassword) {
     users[userIndex] = {
       ...user,
       username: username || user.username,
-      passwordHash: password ? passwordHash : user.passwordHash,
+      passwordHash: password ? hashedPassword : user.passwordHash,
       role: role || user.role
     };
     
