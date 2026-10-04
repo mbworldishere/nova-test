@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA EDGE | Users</title>
+    <link rel="stylesheet" href="static/css/users.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg class="sig" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                        <path class="wire" d="M14 52V12l36 40V12"/>
+                        <circle class="node" cx="14" cy="12" r="3.5"/>
+                        <circle class="node" cx="50" cy="52" r="3.5"/>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="logo-name">NOVA EDGE</span>
+                        <span class="logo-badge">ADMIN</span>
+                    </div>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18M3 6h18M3 18h18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/admin/dashboard" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"/>
+                                <rect x="14" y="3" width="7" height="7"/>
+                                <rect x="3" y="14" width="7" height="7"/>
+                                <rect x="14" y="14" width="7" height="7"/>
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/projects" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/media" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                            <span>Media Library</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/settings" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21"/>
+                            </svg>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-divider"></div>
+
+                <ul class="nav-list nav-bottom">
+                    <li class="nav-item active">
+                        <a href="/admin/users" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link logout-link" id="logoutBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                                <polyline points="16 17 21 12 16 7"/>
+                                <line x1="21" y1="12" x2="9" y2="12"/>
+                            </svg>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p class="version">v1.0.0</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12h18M3 6h18M3 18h18"/>
+                        </svg>
+                    </button>
+                    <div class="header-title">
+                        <h1>User Management</h1>
+                        <p class="breadcrumb">Manage admin users</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="btn-header btn-primary" id="addUserBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12h14"/>
+                        </svg>
+                        <span>Add User</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- Users Table -->
+                <div class="users-table">
+                    <div class="table-header">
+                        <div class="header-cell">User</div>
+                        <div class="header-cell">Role</div>
+                        <div class="header-cell">Created</div>
+                        <div class="header-cell actions">Actions</div>
+                    </div>
+                    <div class="table-body" id="usersList">
+                        <!-- Users will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <footer class="main-footer">
+                <p>© 2026 NOVA EDGE | Admin Panel</p>
+                <p class="footer-note">Secure session active</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Add/Edit User Modal -->
+    <div class="modal" id="userModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="userModalTitle">Add New User</h2>
+                <button class="modal-close" id="userModalClose">&times;</button>
+            </div>
+            <form id="userForm">
+                <input type="hidden" id="userId" name="id">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="username">Username *</label>
+                        <input type="text" id="username" name="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" placeholder="Enter password" required>
+                        <p class="form-hint">Leave empty to keep current password</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Role *</label>
+                        <select id="role" name="role" required>
+                            <option value="admin">Administrator</option>
+                            <option value="editor">Editor</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="userCancel">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-small">
+            <div class="modal-header error">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="15" y1="9" x2="9" y2="15"/>
+                    <line x1="9" y1="9" x2="15" y2="15"/>
+                </svg>
+                <h2>Confirm Delete</h2>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete user "<span id="deleteUsername"></span>"?</p>
+                <p class="warning-text">This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="deleteCancel">Cancel</button>
+                <button type="button" class="btn btn-danger" id="deleteConfirm">Delete User</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-small">
+            <div class="modal-header success">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <h2>Success!</h2>
+            </div>
+            <div class="modal-body">
+                <p id="successMessage">User has been saved successfully.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="successClose">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="modal" id="errorModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-small">
+            <div class="modal-header error">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="15" y1="9" x2="9" y2="15"/>
+                    <line x1="9" y1="9" x2="15" y2="15"/>
+                </svg>
+                <h2>Error</h2>
+            </div>
+            <div class="modal-body">
+                <p id="errorMessage">An error occurred.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="errorClose">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let allUsers = [];
+        let currentUserId = null;
+        let deleteUserId = null;
+
+        // Check session
+        fetch('/api/session')
+            .then(response => response.json())
+            .then(data => {
+                if (!data.authenticated) {
+                    window.location.href = '/admin/login';
+                } else {
+                    loadUsers();
+                }
+            });
+
+        // Load users
+        async function loadUsers() {
+            try {
+                const response = await fetch('/api/users');
+                allUsers = await response.json();
+                renderUsers();
+            } catch (error) {
+                console.error('Error loading users:', error);
+            }
+        }
+
+        // Render users
+        function renderUsers() {
+            const usersList = document.getElementById('usersList');
+            
+            // Get current user session
+            fetch('/api/session')
+                .then(response => response.json())
+                .then(sessionData => {
+                    const currentUser = sessionData.user;
+
+                    usersList.innerHTML = allUsers.map(user => {
+                        const isCurrentUser = currentUser && currentUser.id === user.id;
+                        
+                        return `
+                            <div class="table-row">
+                                <div class="cell user">
+                                    <div class="user-avatar">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                            <circle cx="12" cy="7" r="4"/>
+                                        </svg>
+                                    </div>
+                                    <div class="user-info">
+                                        <span class="user-name">${user.username}</span>
+                                        <span class="user-id">ID: ${user.id}</span>
+                                    </div>
+                                </div>
+                                <div class="cell role">
+                                    <span class="role-badge role-${user.role}">${user.role}</span>
+                                </div>
+                                <div class="cell created">
+                                    ${new Date(user.createdAt).toLocaleDateString('en-US', { 
+                                        year: 'numeric', 
+                                        month: 'short', 
+                                        day: 'numeric' 
+                                    })}
+                                </div>
+                                <div class="cell actions">
+                                    <button class="action-btn edit" onclick="editUser('${user.id}')">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                                        </svg>
+                                        Edit
+                                    </button>
+                                    <button class="action-btn delete" onclick="confirmDelete('${user.id}', '${user.username}')" ${isCurrentUser ? 'disabled style="opacity: 0.5; cursor: not-allowed;"' : ''}>
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="3 6 5 6 21 6"/>
+                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                        </svg>
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                });
+        }
+
+        // Edit user
+        function editUser(userId) {
+            const user = allUsers.find(u => u.id === userId);
+            if (!user) return;
+
+            currentUserId = userId;
+            document.getElementById('userModalTitle').textContent = 'Edit User';
+            document.getElementById('userId').value = user.id;
+            document.getElementById('username').value = user.username;
+            document.getElementById('password').value = '';
+            document.getElementById('password').required = false;
+            document.getElementById('role').value = user.role;
+            document.getElementById('userModal').classList.add('open');
+        }
+
+        // Add user
+        document.getElementById('addUserBtn').addEventListener('click', () => {
+            currentUserId = null;
+            document.getElementById('userModalTitle').textContent = 'Add New User';
+            document.getElementById('userId').value = '';
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('password').required = true;
+            document.getElementById('role').value = 'editor';
+            document.getElementById('userModal').classList.add('open');
+        });
+
+        // Confirm delete
+        function confirmDelete(userId, username) {
+            deleteUserId = userId;
+            document.getElementById('deleteUsername').textContent = username;
+            document.getElementById('deleteModal').classList.add('open');
+        }
+
+        // Delete user
+        async function deleteUser(userId) {
+            try {
+                const response = await fetch(`/api/users/${userId}/delete`, {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    loadUsers();
+                    document.getElementById('successMessage').textContent = 'User has been deleted successfully.';
+                    document.getElementById('successModal').classList.add('open');
+                } else {
+                    document.getElementById('errorMessage').textContent = data.error || 'Error deleting user';
+                    document.getElementById('errorModal').classList.add('open');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('errorMessage').textContent = 'An error occurred';
+                document.getElementById('errorModal').classList.add('open');
+            }
+        }
+
+        // Form submission
+        const userForm = document.getElementById('userForm');
+
+        userForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(userForm);
+            const username = formData.get('username');
+            const password = formData.get('password');
+            const role = formData.get('role');
+
+            if (!username) {
+                document.getElementById('errorMessage').textContent = 'Username is required';
+                document.getElementById('errorModal').classList.add('open');
+                return;
+            }
+
+            if (!currentUserId && !password) {
+                document.getElementById('errorMessage').textContent = 'Password is required for new users';
+                document.getElementById('errorModal').classList.add('open');
+                return;
+            }
+
+            try {
+                const url = currentUserId ? `/api/users/${currentUserId}` : '/api/users';
+                const method = currentUserId ? 'POST' : 'POST';
+                
+                const response = await fetch(url, {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams(formData)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    closeUserModal();
+                    loadUsers();
+                    document.getElementById('successMessage').textContent = 
+                        currentUserId ? 'User has been updated successfully.' : 'User has been created successfully.';
+                    document.getElementById('successModal').classList.add('open');
+                } else {
+                    document.getElementById('errorMessage').textContent = data.error || 'Error saving user';
+                    document.getElementById('errorModal').classList.add('open');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('errorMessage').textContent = 'An error occurred';
+                document.getElementById('errorModal').classList.add('open');
+            }
+        });
+
+        // Close user modal
+        function closeUserModal() {
+            document.getElementById('userModal').classList.remove('open');
+            userForm.reset();
+        }
+
+        // Modals
+        document.getElementById('userModalClose').addEventListener('click', closeUserModal);
+        document.getElementById('userCancel').addEventListener('click', closeUserModal);
+        document.getElementById('deleteCancel').addEventListener('click', () => {
+            document.getElementById('deleteModal').classList.remove('open');
+        });
+        document.getElementById('deleteConfirm').addEventListener('click', () => {
+            if (deleteUserId) {
+                deleteUser(deleteUserId);
+                deleteUserId = null;
+            }
+            document.getElementById('deleteModal').classList.remove('open');
+        });
+        document.getElementById('successClose').addEventListener('click', () => {
+            document.getElementById('successModal').classList.remove('open');
+        });
+        document.getElementById('errorClose').addEventListener('click', () => {
+            document.getElementById('errorModal').classList.remove('open');
+        });
+
+        // Close modals on overlay click
+        [document.getElementById('userModal'), document.getElementById('deleteModal'), 
+         document.getElementById('successModal'), document.getElementById('errorModal')].forEach(modal => {
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.classList.remove('open');
+                    }
+                });
+            }
+        });
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', async function(e) {
+            e.preventDefault();
+            try {
+                const response = await fetch('/api/logout', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                if (data.success) {
+                    window.location.href = '/admin/login';
+                }
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        });
+
+        // Sidebar toggle
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('collapsed');
+        }
+
+        sidebarToggle.addEventListener('click', toggleSidebar);
+        mobileMenuBtn.addEventListener('click', toggleSidebar);
+
+        // Auto-hide sidebar on mobile
+        function handleResize() {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.add('collapsed');
+            } else {
+                sidebar.classList.remove('collapsed');
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0; url=/admin/login">
+    <title>NOVA EDGE Admin - Redirecting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Anton&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #060606;
+            color: #f2efe6;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo .sig {
+            width: 40px;
+            height: 40px;
+            color: #d6ff3f;
+        }
+        
+        .logo .sig .wire {
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+        
+        .logo .sig .node {
+            fill: currentColor;
+        }
+        
+        .logo-name {
+            font-family: 'Anton', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+        
+        .loading {
+            font-size: 14px;
+            color: rgba(242, 239, 230, 0.62);
+        }
+        
+        .loading::after {
+            content: '';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+        
+        @keyframes dots {
+            0%, 20% { content: ''; }
+            40% { content: '.'; }
+            60% { content: '..'; }
+            80%, 100% { content: '...'; }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <svg class="sig" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path class="wire" d="M14 52V12l36 40V12"/>
+            <circle class="node" cx="14" cy="12" r="3.5"/>
+            <circle class="node" cx="50" cy="52" r="3.5"/>
+        </svg>
+        <span class="logo-name">NOVA EDGE</span>
+    </div>
+    <p class="loading">Redirecting to admin panel</p>
+    
+    <script>
+        // Fallback redirect if meta refresh doesn't work
+        window.location.href = '/admin/login';
+    </script>
+</body>
+</html>

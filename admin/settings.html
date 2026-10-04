@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA EDGE | Settings</title>
+    <link rel="stylesheet" href="static/css/settings.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg class="sig" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                        <path class="wire" d="M14 52V12l36 40V12"/>
+                        <circle class="node" cx="14" cy="12" r="3.5"/>
+                        <circle class="node" cx="50" cy="52" r="3.5"/>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="logo-name">NOVA EDGE</span>
+                        <span class="logo-badge">ADMIN</span>
+                    </div>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18M3 6h18M3 18h18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/admin/dashboard" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"/>
+                                <rect x="14" y="3" width="7" height="7"/>
+                                <rect x="3" y="14" width="7" height="7"/>
+                                <rect x="14" y="14" width="7" height="7"/>
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/projects" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/media" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                            <span>Media Library</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/admin/settings" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21"/>
+                            </svg>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-divider"></div>
+
+                <ul class="nav-list nav-bottom">
+                    <li class="nav-item">
+                        <a href="/admin/users" class="nav-link" id="usersLink">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link logout-link" id="logoutBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                                <polyline points="16 17 21 12 16 7"/>
+                                <line x1="21" y1="12" x2="9" y2="12"/>
+                            </svg>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p class="version">v1.0.0</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12h18M3 6h18M3 18h18"/>
+                        </svg>
+                    </button>
+                    <div class="header-title">
+                        <h1>Settings</h1>
+                        <p class="breadcrumb">Configure your agency information</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button type="submit" form="settingsForm" class="btn-header btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Save Settings
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <form id="settingsForm" class="settings-form">
+                    <!-- Agency Information -->
+                    <section class="form-section">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                </svg>
+                                Agency Information
+                            </h2>
+                        </div>
+                        <div class="section-content">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="agencyName">Agency Name *</label>
+                                    <input type="text" id="agencyName" name="agencyName" placeholder="NOVA EDGE" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tagline">Tagline *</label>
+                                    <input type="text" id="tagline" name="tagline" placeholder="We Make Brands Impossible To Ignore" required>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" placeholder="novaedgework@gmail.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+91 88666 99702">
+                                </div>
+                                <div class="form-group">
+                                    <label for="whatsapp">WhatsApp Number</label>
+                                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="+918866699702">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Social Links -->
+                    <section class="form-section">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                                </svg>
+                                Social Media Links
+                            </h2>
+                        </div>
+                        <div class="section-content">
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label for="instagram">Instagram URL</label>
+                                    <div class="input-group">
+                                        <span class="input-prefix">https://instagram.com/</span>
+                                        <input type="text" id="instagram" name="instagram" placeholder="novaedge.here">
+                                    </div>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="behance">Behance URL</label>
+                                    <div class="input-group">
+                                        <span class="input-prefix">https://www.behance.net/</span>
+                                        <input type="text" id="behance" name="behance" placeholder="nova-edge">
+                                    </div>
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="linkedin">LinkedIn URL</label>
+                                    <div class="input-group">
+                                        <span class="input-prefix">https://in.linkedin.com/company/</span>
+                                        <input type="text" id="linkedin" name="linkedin" placeholder="novaedge">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Display Settings -->
+                    <section class="form-section">
+                        <div class="section-header">
+                            <h2 class="section-title">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                                Display Settings
+                            </h2>
+                        </div>
+                        <div class="section-content">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="projectsPerPage">Projects per Page</label>
+                                    <select id="projectsPerPage" name="projectsPerPage">
+                                        <option value="10">10</option>
+                                        <option value="20">20</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="defaultSorting">Default Sorting</label>
+                                    <select id="defaultSorting" name="defaultSorting">
+                                        <option value="newest">Newest First</option>
+                                        <option value="oldest">Oldest First</option>
+                                        <option value="name-asc">Name (A-Z)</option>
+                                        <option value="name-desc">Name (Z-A)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Submit -->
+                    <div class="form-footer">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            Save All Settings
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <footer class="main-footer">
+                <p>© 2026 NOVA EDGE | Admin Panel</p>
+                <p class="footer-note">Secure session active</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-small">
+            <div class="modal-header success">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <h2>Success!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Settings have been saved successfully.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="successClose">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div class="modal" id="errorModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-small">
+            <div class="modal-header error">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="15" y1="9" x2="9" y2="15"/>
+                    <line x1="9" y1="9" x2="15" y2="15"/>
+                </svg>
+                <h2>Error</h2>
+            </div>
+            <div class="modal-body">
+                <p id="errorMessage">An error occurred while saving settings.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="errorClose">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check session
+        fetch('/api/session')
+            .then(response => response.json())
+            .then(data => {
+                if (!data.authenticated) {
+                    window.location.href = '/admin/login';
+                } else {
+                    loadSettings();
+                }
+            });
+
+        // Load settings
+        async function loadSettings() {
+            try {
+                const response = await fetch('/api/settings');
+                const settings = await response.json();
+
+                // Set form values
+                document.getElementById('agencyName').value = settings.agencyName || '';
+                document.getElementById('tagline').value = settings.tagline || '';
+                document.getElementById('email').value = settings.email || '';
+                document.getElementById('phone').value = settings.phone || '';
+                document.getElementById('whatsapp').value = settings.whatsapp || '';
+                document.getElementById('instagram').value = settings.instagram ? settings.instagram.replace('https://instagram.com/', '') : '';
+                document.getElementById('behance').value = settings.behance ? settings.behance.replace('https://www.behance.net/', '') : '';
+                document.getElementById('linkedin').value = settings.linkedin ? settings.linkedin.replace('https://in.linkedin.com/company/', '') : '';
+                document.getElementById('projectsPerPage').value = settings.projectsPerPage || '10';
+                document.getElementById('defaultSorting').value = settings.defaultSorting || 'newest';
+
+            } catch (error) {
+                console.error('Error loading settings:', error);
+            }
+        }
+
+        // Form submission
+        const settingsForm = document.getElementById('settingsForm');
+
+        settingsForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(settingsForm);
+
+            // Process social URLs
+            const instagram = formData.get('instagram');
+            const behance = formData.get('behance');
+            const linkedin = formData.get('linkedin');
+
+            formData.set('instagram', instagram ? `https://instagram.com/${instagram}` : '');
+            formData.set('behance', behance ? `https://www.behance.net/${behance}` : '');
+            formData.set('linkedin', linkedin ? `https://in.linkedin.com/company/${linkedin}` : '');
+
+            try {
+                const response = await fetch('/api/settings', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: new URLSearchParams(formData)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    document.getElementById('successModal').classList.add('open');
+                } else {
+                    document.getElementById('errorMessage').textContent = data.error || 'An error occurred';
+                    document.getElementById('errorModal').classList.add('open');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('errorMessage').textContent = 'An error occurred while saving';
+                document.getElementById('errorModal').classList.add('open');
+            }
+        });
+
+        // Modals
+        document.getElementById('successClose').addEventListener('click', () => {
+            document.getElementById('successModal').classList.remove('open');
+        });
+
+        document.getElementById('errorClose').addEventListener('click', () => {
+            document.getElementById('errorModal').classList.remove('open');
+        });
+
+        [document.getElementById('successModal'), document.getElementById('errorModal')].forEach(modal => {
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.classList.remove('open');
+                    }
+                });
+            }
+        });
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', async function(e) {
+            e.preventDefault();
+            try {
+                const response = await fetch('/api/logout', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                if (data.success) {
+                    window.location.href = '/admin/login';
+                }
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        });
+
+        // Sidebar toggle
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('collapsed');
+        }
+
+        sidebarToggle.addEventListener('click', toggleSidebar);
+        mobileMenuBtn.addEventListener('click', toggleSidebar);
+
+        // Auto-hide sidebar on mobile
+        function handleResize() {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.add('collapsed');
+            } else {
+                sidebar.classList.remove('collapsed');
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+    </script>
+</body>
+</html>

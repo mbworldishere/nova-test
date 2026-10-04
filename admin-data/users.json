@@ -1,0 +1,9 @@
+[
+  {
+    "id": "admin-001",
+    "username": "novaAdmin",
+    "passwordHash": "$2a$10$N9qo8uLOickgx2ZMRZoMy.Mrq4H3Q6fQ5J86P7u3a2L1F9nQ0vW2aK",
+    "role": "admin",
+    "createdAt": "2026-10-04T08:45:00Z"
+  }
+]

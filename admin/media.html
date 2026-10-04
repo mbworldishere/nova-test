@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA EDGE | Media Library</title>
+    <link rel="stylesheet" href="static/css/media.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Anton&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg class="sig" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                        <path class="wire" d="M14 52V12l36 40V12"/>
+                        <circle class="node" cx="14" cy="12" r="3.5"/>
+                        <circle class="node" cx="50" cy="52" r="3.5"/>
+                    </svg>
+                    <div class="logo-text">
+                        <span class="logo-name">NOVA EDGE</span>
+                        <span class="logo-badge">ADMIN</span>
+                    </div>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12h18M3 6h18M3 18h18"/>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="/admin/dashboard" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="7" height="7"/>
+                                <rect x="14" y="3" width="7" height="7"/>
+                                <rect x="3" y="14" width="7" height="7"/>
+                                <rect x="14" y="14" width="7" height="7"/>
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/projects" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                                <line x1="12" y1="22.08" x2="12" y2="12"/>
+                            </svg>
+                            <span>Projects</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="/admin/media" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                            <span>Media Library</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/settings" class="nav-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21"/>
+                            </svg>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="nav-divider"></div>
+
+                <ul class="nav-list nav-bottom">
+                    <li class="nav-item">
+                        <a href="/admin/users" class="nav-link" id="usersLink">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link logout-link" id="logoutBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                                <polyline points="16 17 21 12 16 7"/>
+                                <line x1="21" y1="12" x2="9" y2="12"/>
+                            </svg>
+                            <span>Sign Out</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p class="version">v1.0.0</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 12h18M3 6h18M3 18h18"/>
+                        </svg>
+                    </button>
+                    <div class="header-title">
+                        <h1>Media Library</h1>
+                        <p class="breadcrumb">Upload and manage media files</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="header-stats">
+                        <div class="stat-item">
+                            <span class="stat-value" id="totalMedia">0</span>
+                            <span class="stat-label">Total Files</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value" id="totalSize">0 MB</span>
+                            <span class="stat-label">Total Size</span>
+                        </div>
+                    </div>
+                    <button class="btn-header btn-primary" id="uploadBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                        <span>Upload Files</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- Filters -->
+                <div class="filters-bar">
+                    <div class="search-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Search media...">
+                    </div>
+                    <div class="filters">
+                        <select id="typeFilter">
+                            <option value="">All Types</option>
+                            <option value="image/jpeg">JPEG</option>
+                            <option value="image/png">PNG</option>
+                            <option value="image/webp">WebP</option>
+                            <option value="video/mp4">MP4 Video</option>
+                        </select>
+                        <button class="btn-filter" id="applyFilters">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="22 9 12 19 2 9 12 2 22 9"/>
+                            </svg>
+                            Apply
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Media Grid -->
+                <div class="media-grid" id="mediaGrid">
+                    <!-- Media items will be loaded here -->
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="3" y1="9" x2="21" y2="9"/>
+                        <line x1="9" y1="21" x2="9" y2="9"/>
+                    </svg>
+                    <h3>No media files yet</h3>
+                    <p>Upload your first image or video to get started</p>
+                    <button class="btn btn-primary" id="emptyUploadBtn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                        Upload Files
+                    </button>
+                </div>
+
+                <!-- Batch Actions -->
+                <div class="batch-actions" id="batchActions">
+                    <div class="batch-info">
+                        <span id="selectedCount">0</span> selected
+                    </div>
+                    <div class="batch-buttons">
+                        <button class="btn-batch btn-danger" id="batchDelete">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="3 6 5 6 21 6"/>
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                            </svg>
+                            Delete Selected
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="main-footer">
+                <p>© 2026 NOVA EDGE | Admin Panel</p>
+                <p class="footer-note">Secure session active</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal" id="uploadModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upload Files</h2>
+                <button class="modal-close" id="uploadClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" multiple accept="image/*,video/*">
+                    <div class="upload-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="17 8 12 3 7 8"/>
+                            <line x1="12" y1="3" x2="12" y2="15"/>
+                        </svg>
+                        <p>Drag & drop files here or click to browse</p>
+                        <p class="upload-hint">Supports: JPG, PNG, WebP, MP4 | Max 50MB per file</p>
+                    </div>
+                    <div class="file-list" id="fileList"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="uploadCancel">Cancel</button>
+                <button type="button" class="btn btn-primary" id="uploadStart">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                    Upload Files
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-small">
+            <div class="modal-header error">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="15" y1="9" x2="9" y2="15"/>
+                    <line x1="9" y1="9" x2="15" y2="15"/>
+                </svg>
+                <h2>Confirm Delete</h2>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete <span id="deleteCount">this file</span>?</p>
+                <p class="warning-text">This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="deleteCancel">Cancel</button>
+                <button type="button" class="btn btn-danger" id="deleteConfirm">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bulk Delete Confirmation Modal -->
+    <div class="modal" id="bulkDeleteModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content modal-small">
+            <div class="modal-header error">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="15" y1="9" x2="9" y2="15"/>
+                    <line x1="9" y1="9" x2="15" y2="15"/>
+                </svg>
+                <h2>Confirm Bulk Delete</h2>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete <span id="bulkCount">0</span> selected files?</p>
+                <p class="warning-text">This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="bulkDeleteCancel">Cancel</button>
+                <button type="button" class="btn btn-danger" id="bulkDeleteConfirm">Delete All</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State
+        let allMedia = [];
+        let filteredMedia = [];
+        let selectedMedia = new Set();
+        let filesToUpload = [];
+
+        // Check session
+        fetch('/api/session')
+            .then(response => response.json())
+            .then(data => {
+                if (!data.authenticated) {
+                    window.location.href = '/admin/login';
+                } else {
+                    loadMedia();
+                }
+            });
+
+        // Load media
+        async function loadMedia() {
+            try {
+                const response = await fetch('/api/media');
+                allMedia = await response.json();
+                filteredMedia = [...allMedia];
+                renderMedia();
+                updateStats();
+            } catch (error) {
+                console.error('Error loading media:', error);
+            }
+        }
+
+        // Update stats
+        function updateStats() {
+            const total = filteredMedia.length;
+            const totalSize = filteredMedia.reduce((sum, m) => sum + m.size, 0);
+            
+            document.getElementById('totalMedia').textContent = total;
+            document.getElementById('totalSize').textContent = formatBytes(totalSize);
+            
+            if (total === 0) {
+                document.getElementById('emptyState').style.display = 'flex';
+                document.getElementById('mediaGrid').style.display = 'none';
+            } else {
+                document.getElementById('emptyState').style.display = 'none';
+                document.getElementById('mediaGrid').style.display = 'grid';
+            }
+        }
+
+        // Format bytes
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        // Filter media
+        function filterMedia() {
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const type = document.getElementById('typeFilter').value;
+
+            filteredMedia = allMedia.filter(media => {
+                const matchesSearch = !search || 
+                    media.filename.toLowerCase().includes(search) ||
+                    media.originalName.toLowerCase().includes(search);
+                
+                const matchesType = !type || media.mimetype === type;
+
+                return matchesSearch && matchesType;
+            });
+
+            renderMedia();
+            updateStats();
+        }
+
+        // Render media
+        function renderMedia() {
+            const mediaGrid = document.getElementById('mediaGrid');
+            mediaGrid.innerHTML = filteredMedia.map(media => {
+                const isSelected = selectedMedia.has(media.filename);
+                const isImage = media.mimetype.startsWith('image/');
+                const isVideo = media.mimetype.startsWith('video/');
+                
+                return `
+                    <div class="media-item ${isSelected ? 'selected' : ''}" data-filename="${media.filename}">
+                        <div class="media-checkbox">
+                            <label class="checkbox-container">
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                        <div class="media-preview">
+                            ${isImage ? `<img src="${media.url}" alt="${media.originalName}">` : ''}
+                            ${isVideo ? `
+                                <div class="video-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="23 7 16 12 23 17 23 7"/>
+                                    </svg>
+                                    <span>Video</span>
+                                </div>
+                            ` : ''}
+                            ${!isImage && !isVideo ? `
+                                <div class="file-placeholder">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                    </svg>
+                                    <span>File</span>
+                                </div>
+                            ` : ''}
+                        </div>
+                        <div class="media-info">
+                            <div class="media-name">${media.originalName}</div>
+                            <div class="media-meta">
+                                <span class="media-type">${media.mimetype.split('/')[1].toUpperCase()}</span>
+                                <span class="media-size">${formatBytes(media.size)}</span>
+                            </div>
+                        </div>
+                        <div class="media-actions">
+                            <button class="action-btn delete" onclick="confirmDelete('${media.filename}')">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="3 6 5 6 21 6"/>
+                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Update batch actions
+            updateBatchActions();
+        }
+
+        // Update batch actions
+        function updateBatchActions() {
+            const count = selectedMedia.size;
+            document.getElementById('selectedCount').textContent = count;
+            document.getElementById('batchActions').style.display = count > 0 ? 'flex' : 'none';
+        }
+
+        // Confirm delete
+        function confirmDelete(filename) {
+            document.getElementById('deleteCount').textContent = 'this file';
+            deleteFilename = filename;
+            document.getElementById('deleteModal').classList.add('open');
+        }
+
+        let deleteFilename = null;
+
+        // Delete media
+        async function deleteMedia(filename) {
+            try {
+                const response = await fetch(`/api/media/${filename}/delete`, {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    loadMedia();
+                    selectedMedia.delete(filename);
+                    updateBatchActions();
+                } else {
+                    alert('Error deleting file');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', filterMedia);
+        document.getElementById('typeFilter').addEventListener('change', filterMedia);
+        document.getElementById('applyFilters').addEventListener('click', filterMedia);
+
+        // Upload button
+        document.getElementById('uploadBtn').addEventListener('click', () => {
+            document.getElementById('uploadModal').classList.add('open');
+        });
+
+        document.getElementById('emptyUploadBtn').addEventListener('click', () => {
+            document.getElementById('uploadModal').classList.add('open');
+        });
+
+        // File selection
+        const fileInput = document.getElementById('fileInput');
+        const uploadArea = document.getElementById('uploadArea');
+        const fileList = document.getElementById('fileList');
+
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', function(e) {
+            handleFiles(e.target.files);
+        });
+
+        uploadArea.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', function() {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', function(e) {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            handleFiles(e.dataTransfer.files);
+        });
+
+        function handleFiles(files) {
+            filesToUpload = Array.from(files);
+            renderFileList();
+        }
+
+        function renderFileList() {
+            fileList.innerHTML = filesToUpload.map((file, index) => {
+                const isImage = file.type.startsWith('image/');
+                const isVideo = file.type.startsWith('video/');
+                
+                return `
+                    <div class="file-item">
+                        <div class="file-preview">
+                            ${isImage ? `<img src="${URL.createObjectURL(file)}" alt="${file.name}">` : ''}
+                            ${isVideo ? `
+                                <div class="video-placeholder small">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="23 7 16 12 23 17 23 7"/>
+                                    </svg>
+                                </div>
+                            ` : ''}
+                            ${!isImage && !isVideo ? `
+                                <div class="file-placeholder small">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    </svg>
+                                </div>
+                            ` : ''}
+                        </div>
+                        <div class="file-info">
+                            <div class="file-name">${file.name}</div>
+                            <div class="file-meta">
+                                <span class="file-type">${file.type.split('/')[1].toUpperCase() || 'FILE'}</span>
+                                <span class="file-size">${formatBytes(file.size)}</span>
+                            </div>
+                        </div>
+                        <button class="file-remove" onclick="removeFile(${index})">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function removeFile(index) {
+            filesToUpload.splice(index, 1);
+            renderFileList();
+        }
+
+        // Upload files
+        document.getElementById('uploadStart').addEventListener('click', async () => {
+            if (filesToUpload.length === 0) return;
+
+            const formData = new FormData();
+            filesToUpload.forEach(file => {
+                formData.append('files', file);
+            });
+
+            try {
+                const response = await fetch('/api/media/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    closeUploadModal();
+                    loadMedia();
+                } else {
+                    alert('Error uploading files');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while uploading');
+            }
+        });
+
+        function closeUploadModal() {
+            filesToUpload = [];
+            fileList.innerHTML = '';
+            fileInput.value = '';
+            document.getElementById('uploadModal').classList.remove('open');
+        }
+
+        // Modals
+        document.getElementById('uploadClose').addEventListener('click', closeUploadModal);
+        document.getElementById('uploadCancel').addEventListener('click', closeUploadModal);
+
+        document.getElementById('deleteCancel').addEventListener('click', () => {
+            document.getElementById('deleteModal').classList.remove('open');
+        });
+
+        document.getElementById('deleteConfirm').addEventListener('click', () => {
+            if (deleteFilename) {
+                deleteMedia(deleteFilename);
+                deleteFilename = null;
+            }
+            document.getElementById('deleteModal').classList.remove('open');
+        });
+
+        document.getElementById('bulkDeleteCancel').addEventListener('click', () => {
+            document.getElementById('bulkDeleteModal').classList.remove('open');
+        });
+
+        document.getElementById('bulkDeleteConfirm').addEventListener('click', async () => {
+            const filenames = Array.from(selectedMedia);
+            
+            try {
+                for (const filename of filenames) {
+                    await fetch(`/api/media/${filename}/delete`, {
+                        method: 'POST'
+                    });
+                }
+                
+                loadMedia();
+                selectedMedia.clear();
+                updateBatchActions();
+                document.getElementById('bulkDeleteModal').classList.remove('open');
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        // Batch delete
+        document.getElementById('batchDelete').addEventListener('click', () => {
+            const count = selectedMedia.size;
+            if (count > 0) {
+                document.getElementById('bulkCount').textContent = count + ' selected files';
+                document.getElementById('bulkDeleteModal').classList.add('open');
+            }
+        });
+
+        // Selection
+        document.getElementById('mediaGrid').addEventListener('change', function(e) {
+            if (e.target.type === 'checkbox') {
+                const mediaItem = e.target.closest('.media-item');
+                const filename = mediaItem.dataset.filename;
+                
+                if (e.target.checked) {
+                    selectedMedia.add(filename);
+                } else {
+                    selectedMedia.delete(filename);
+                }
+                
+                updateBatchActions();
+            }
+        });
+
+        // Close modals on overlay click
+        [document.getElementById('uploadModal'), document.getElementById('deleteModal'), document.getElementById('bulkDeleteModal')].forEach(modal => {
+            if (modal) {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        modal.classList.remove('open');
+                    }
+                });
+            }
+        });
+
+        // Logout
+        document.getElementById('logoutBtn').addEventListener('click', async function(e) {
+            e.preventDefault();
+            try {
+                const response = await fetch('/api/logout', {
+                    method: 'POST'
+                });
+                const data = await response.json();
+                if (data.success) {
+                    window.location.href = '/admin/login';
+                }
+            } catch (error) {
+                console.error('Logout error:', error);
+            }
+        });
+
+        // Sidebar toggle
+        const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('sidebarToggle');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('collapsed');
+        }
+
+        sidebarToggle.addEventListener('click', toggleSidebar);
+        mobileMenuBtn.addEventListener('click', toggleSidebar);
+
+        // Auto-hide sidebar on mobile
+        function handleResize() {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.add('collapsed');
+            } else {
+                sidebar.classList.remove('collapsed');
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+    </script>
+</body>
+</html>
