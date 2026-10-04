@@ -17,6 +17,13 @@ const SESSION_SECRET = process.env.SESSION_SECRET || 'nova-edge-secret-key-' + u
 const UPLOAD_PATH = path.join(__dirname, 'uploads');
 const DATA_PATH = path.join(process.cwd(), 'admin-data');
 
+// Debug: Log DATA_PATH and check if files exist
+console.log('=== DEBUG DATA_PATH ===');
+console.log('DATA_PATH:', DATA_PATH);
+console.log('Users file path:', path.join(DATA_PATH, 'users.json'));
+console.log('Users file exists:', fs.existsSync(path.join(DATA_PATH, 'users.json')));
+console.log('=======================');
+
 // Ensure directories exist
 if (!fs.existsSync(UPLOAD_PATH)) {
   fs.mkdirSync(UPLOAD_PATH, { recursive: true });
