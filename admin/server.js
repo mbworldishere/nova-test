@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 // ============ CONFIG ============
 const SESSION_SECRET = process.env.SESSION_SECRET || 'nova-edge-secret-key-' + uuidv4();
 const UPLOAD_PATH = path.join(__dirname, 'uploads');
-const DATA_PATH = path.join(__dirname, '..', 'admin-data');
+const DATA_PATH = path.join(process.cwd(), 'admin-data');
 
 // Ensure directories exist
 if (!fs.existsSync(UPLOAD_PATH)) {
